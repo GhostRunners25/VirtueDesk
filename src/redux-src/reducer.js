@@ -1,5 +1,4 @@
 import * as actions from './ActionCreators';
-import * as manager from './ItemManager';
 
 const initial = {
     lastId: 0,
@@ -8,7 +7,7 @@ const initial = {
 
 export default function reducer(state = initial, action) {
     switch (action.type) {
-        case actions.ITEM_ADDED:{
+        case actions.ITEM_ADDED: {
             const newLastId = ++state.lastId;
             return {
                 lastId: newLastId,
@@ -33,7 +32,7 @@ export default function reducer(state = initial, action) {
         case actions.ITEM_RENAME:
             return {
                 ...state,
-                items: state.items.map(item => item.id !== action.payload.id ? item : { ...item, any: manager.WIDGET_RENAMING })
+                items: state.items.map(item => item.id !== action.payload.id ? item : { ...item, name: action.payload.name })
             }
         default:
             return state;

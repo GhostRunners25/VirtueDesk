@@ -1,0 +1,13 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
+
+import * as manager from '../redux-src/ItemManager';
+import DisplayIcon from './display-icon';
+
+const BuildIcons = (props) => {
+    const allItems = useSelector(state => state.items);
+    return allItems.filter(item => manager.IsItem(item.itemType)).map(item =>
+        <DisplayIcon key={item.id} icon={manager.GetIcon(item.itemType)} type={item.itemType} xPos={item.xPos} yPos={item.yPos} name={item.name} id={item.itemId} />);
+}
+
+export default BuildIcons;

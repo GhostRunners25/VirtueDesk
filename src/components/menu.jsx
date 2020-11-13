@@ -14,8 +14,8 @@ const Menu = (props) => {
             <AddFolderBtn pos={[props.xPos, props.yPos]} />
             <AddFileBtn pos={[props.xPos, props.yPos]} />
         </> : <>
-                <RenameBtn var={item.id} />
-                <DeleteBtn var={item.id} />
+                <RenameBtn item={item} pos={[props.xPos, props.yPos]} />
+                <DeleteBtn id={item.id} />
             </>}
     </div>
 }
