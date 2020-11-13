@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'basic';
+    src: url(./Eczar-Regular.ttf);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'basic';
+}
+
+#frame {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+}
+
+#menu {
+    z-index: 10;
+    position: absolute;
+    width: 120px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.btn {
+    font-size: 12px;
+    line-height: 12px;
+    padding: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: lightgray;
+}
+
+.icon-container {
+    position: absolute;
+    z-index: 5;
+}
+
+.icon-container img {
+    width: 32px;
+    cursor: pointer;
+}
+
+.icon-container p {
+    font-family: 'basic';
+    font-size: 12px;
+    line-height: 12px;
+    width: 64px;
+    margin: -4px 0px 0px -16px;
+    text-align: center;
+}
+
+.icon-container input[type=text] {
+    font-family: 'basic';
+    font-size: 12px;
+    line-height: 12px;
+    width: 64px;
+    margin: -4px 0px 0px -19px;
+    text-align: center;
+}
