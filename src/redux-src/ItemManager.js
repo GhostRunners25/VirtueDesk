@@ -1,5 +1,3 @@
-import { useSelector } from 'react-redux';
-
 import FolderIcon from '../icons/iconfinder_folder-storage-files_2931141.svg';
 import FileIcon from '../icons/iconfinder_document-text-file-sheet-doc_2931167.svg';
 
@@ -30,13 +28,12 @@ export const IsItem = itemType => {
     }
 }
 
-export const GetItemAt = (xPos, yPos) => {
-    const allItems = useSelector(state => state.items);
+export const GetItemAt = (xPos, yPos, allItems) => {
     for (let i = 0; i < allItems.length; i++) {
         let item = allItems[i];
         if ((xPos <= item.xPos + 32 && xPos >= item.xPos) && (yPos <= item.yPos + 32 && yPos >= item.yPos)) {
-            return (item);
+            return item;
         }
     }
-    return (null)
+    return null;
 }

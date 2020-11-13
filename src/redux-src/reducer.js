@@ -8,7 +8,7 @@ const initial = {
 export default function reducer(state = initial, action) {
     switch (action.type) {
         case actions.ITEM_ADDED: {
-            const newLastId = ++state.lastId;
+            const newLastId = 1 + state.lastId;
             return {
                 lastId: newLastId,
                 items: [

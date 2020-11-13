@@ -6,9 +6,11 @@ import RenameBtn from './rename-btn';
 import DeleteBtn from './delete-btn';
 
 import { GetItemAt } from '../redux-src/ItemManager';
+import {useSelector} from "react-redux";
 
 const Menu = (props) => {
-    let item = GetItemAt(props.xPos, props.yPos);
+    const allItems = useSelector(state => state.items);
+    const item = GetItemAt(props.xPos, props.yPos, allItems);
     return <div id={'menu'} style={{ left: props.xPos, top: props.yPos }}>
         {item === null ? <>
             <AddFolderBtn pos={[props.xPos, props.yPos]} />
