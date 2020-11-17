@@ -15,8 +15,8 @@ const DisplayIcon = (props) => {
     }
 
     const endDrag = (event) => {
-        const offsetX = event.screenX - 80;
-        const offsetY = event.screenY - 90 - 80;
+        const offsetX = event.screenX - 40;
+        const offsetY = event.screenY - 90 - 40;
         dispatch(ItemMoving(props.id, offsetX, offsetY));
     }
 
