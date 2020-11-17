@@ -29,10 +29,17 @@ export default function reducer(state = initial, action) {
                 ...state,
                 items: state.items.filter(item => item.id !== action.payload.id)
             }
-        case actions.ITEM_RENAME:
+        case actions.ITEM_RENAMED:
             return {
                 ...state,
                 items: state.items.map(item => item.id !== action.payload.id ? item : { ...item, name: action.payload.name })
+            }
+        case actions.ITEM_MOVING:
+            return {
+                ...state,
+                items: state.items.map(item => item.id !== action.payload.id ? item : {
+                    ...item, xPos: action.payload.xPos, yPos: action.payload.yPos
+                })
             }
         default:
             return state;

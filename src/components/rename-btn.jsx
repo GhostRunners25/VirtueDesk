@@ -6,12 +6,7 @@ import { WIDGET_RENAMING } from '../redux-src/ItemManager';
 
 const RenameBtn = (props) => {
     const dispatch = useDispatch();
-    return (<div
-      className={'btn'}
-      onClick={() => dispatch(ItemAdded(WIDGET_RENAMING, props.pos[0], props.pos[1], 'Renaming Widget', props.item))}
-    >
-        Rename
-    </div>)
+    return <div className={'menu-btn'} onClick={() => dispatch(ItemAdded(WIDGET_RENAMING, props.pos[0], props.pos[1], 'Renaming Widget', props.item))}>Rename</div>
 }
 
 export default RenameBtn;

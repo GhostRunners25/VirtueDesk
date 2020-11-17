@@ -6,12 +6,12 @@ import RenameBtn from './rename-btn';
 import DeleteBtn from './delete-btn';
 
 import { GetItemAt } from '../redux-src/ItemManager';
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 
 const Menu = (props) => {
     const allItems = useSelector(state => state.items);
     const item = GetItemAt(props.xPos, props.yPos, allItems);
-    return <div id={'menu'} style={{ left: props.xPos, top: props.yPos }}>
+    return <div className={'menu'} style={{ left: props.xPos, top: props.yPos }}>
         {item === null ? <>
             <AddFolderBtn pos={[props.xPos, props.yPos]} />
             <AddFileBtn pos={[props.xPos, props.yPos]} />

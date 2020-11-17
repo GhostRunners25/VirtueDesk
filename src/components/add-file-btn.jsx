@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 
 const AddFileBtn = (props) => {
     const dispatch = useDispatch();
-    return <div className={'btn'} onClick={() => dispatch(ItemAdded(ITEM_FILE, props.pos[0], props.pos[1], 'new file', 'none'))}>{'Add file'}</div>
+    return <div className={'menu-btn'} onClick={() => dispatch(ItemAdded(ITEM_FILE, props.pos[0], props.pos[1], 'new file', 'none'))}>{'Add file'}</div>
 }
 
 // Change props.pos so it is passed an array instead

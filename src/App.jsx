@@ -18,7 +18,7 @@ const Frame = (props) => {
     setY(event.screenY - 90);
   };
 
-  return <div id={'frame'} onClick={handleClick}>
+  return <div className={'frame'} onClick={handleClick}>
     {menuOpen ? <Menu xPos={x} yPos={y} /> : null}
     <BuildIcons />
     <BuildWidgets />

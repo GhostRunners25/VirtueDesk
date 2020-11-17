@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Ultralight';
+    src: url('./sf-ui-display-ultralight.otf');
+}
+    
+@font-face {
+    font-family: 'Thin';
+    src: url('./sf-ui-display-thin.otf');
+}
+
+@font-face {
+    font-family: 'Light';
+    src: url('./sf-ui-display-light.otf');
+}
+
+@font-face {
+    font-family: 'Medium';
+    src: url('./sf-ui-display-medium.otf');
+}
+
+@font-face {
+    font-family: 'Semibold';
+    src: url('./sf-ui-display-semibold.otf');
+}
+
+@font-face {
+    font-family: 'Bold';
+    src: url('./sf-ui-display-bold.otf');
+}
+
+@font-face {
+    font-family: 'Heavy';
+    src: url('./sf-ui-display-heavy.otf');
+}
+
+@font-face {
+    font-family: 'Black';
+    src: url('./sf-ui-display-black.otf');
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Medium';
+    overflow: hidden;
+}
+
+.frame {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+}
+
+.menu {
+    z-index: 10;
+    position: absolute;
+    width: 120px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.menu-btn {
+    font-size: 12px;
+    line-height: 12px;
+    padding: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    background-color: lightgray;
+}
+
+.icon-container {
+    width: 80px;
+    height: 80px;
+    color: black;
+    cursor: pointer;
+    font-family: 'Medium';
+    background-color: white;
+    position: absolute;
+    padding: 0px;
+    z-index: 5;
+    text-align: center;
+    border: none;
+}
+
+.icon-container img {
+    width: 32px;
+    margin-bottom: 2px;
+}
+
+.icon-container p {
+    width: 80px;
+    font-size: 12px;
+    line-height: 12px;
+    margin: 2px 0px 0px 0px;
+}

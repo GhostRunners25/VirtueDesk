@@ -2,6 +2,7 @@
   "name": "virtue-desk",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/user-event": "^7.2.1",
@@ -35,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.1",
     "@testing-library/react": "^9.5.0",
     "react-redux-test-renderer": "^2.1.1"
   }
