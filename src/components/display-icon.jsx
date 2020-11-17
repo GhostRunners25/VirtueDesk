@@ -11,16 +11,13 @@ const DisplayIcon = (props) => {
         top: props.yPos,
     }
 
-    const startDrag = (event) => {
-    }
-
     const endDrag = (event) => {
         const offsetX = event.screenX - 40;
         const offsetY = event.screenY - 90 - 40;
         dispatch(ItemMoving(props.id, offsetX, offsetY));
     }
 
-    return <button className={'icon-container'} style={IconStyle} id={props.id} draggable={true} onDragStart={startDrag} onDragEnd={endDrag}>
+    return <button className={'icon-container'} style={IconStyle} id={props.id} draggable={true} onDragEnd={endDrag}>
         <img src={props.icon} alt={'icon ' + props.type} draggable={false} />
         <p>{props.name}</p>
     </button>

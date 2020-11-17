@@ -5,6 +5,6 @@ import { useDispatch } from 'react-redux';
 
 const DeleteBtn = (props) => {
     const dispatch = useDispatch();
-    return <div className={'menu-btn'} onClick={() => dispatch(ItemDeleted(props.id))}>{'Delete'}</div>
+    return <button className={'menu-btn'} onClick={() => dispatch(ItemDeleted(props.id))}>{'Delete'}</button>
 }
 export default DeleteBtn;
