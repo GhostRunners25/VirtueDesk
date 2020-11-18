@@ -1,4 +1,4 @@
-import {GetIcon, IsItem, ITEM_FILE, ITEM_FOLDER} from "../ItemManager";
+import { GetIcon, GetItemAt, IsItem, ITEM_FILE, ITEM_FOLDER } from "../ItemManager";
 import FileIcon from "../../icons/iconfinder_document-text-file-sheet-doc_2931167.svg";
 import FolderIcon from "../../icons/iconfinder_folder-storage-files_2931141.svg";
 
@@ -30,6 +30,22 @@ describe('Item Manager', () => {
   });
 
   describe('GetItemAt', () => {
+    const item = (xPos, yPos) => ({
+      xPos,
+      yPos
+    });
 
+    const testCases = [
+      [0, 0, []],
+      [100, 0, [item(0, 0)]],
+      [0, 0, [item(100, 0)]],
+      [0, 100, [item(0, 0)]],
+      [0, 0, [item(0, 100)]],
+    ]
+
+    it.each(testCases)("GetItemAt: %s", (xPos, yPos, allItems) => {
+      const result = GetItemAt(xPos, yPos, allItems);
+      expect(result).toBeNull();
+    });
   });
 });

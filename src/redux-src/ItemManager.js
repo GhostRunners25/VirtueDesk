@@ -31,7 +31,8 @@ export const IsItem = itemType => {
 export const GetItemAt = (xPos, yPos, allItems) => {
     for (let i = 0; i < allItems.length; i++) {
         let item = allItems[i];
-        if ((xPos <= item.xPos + 80 && xPos >= item.xPos) && (yPos <= item.yPos + 80 && yPos >= item.yPos)) {
+        if ((xPos <= item.xPos + 80 && xPos >= item.xPos) &&
+            (yPos <= item.yPos + 80 && yPos >= item.yPos)) {
             return item;
         }
     }
