@@ -37,10 +37,10 @@ describe('Item Manager', () => {
 
     const testCases = [
       [0, 0, []],
-      [100, 0, [item(0, 0)]],
-      [0, 0, [item(100, 0)]],
-      [0, 100, [item(0, 0)]],
-      [0, 0, [item(0, 100)]],
+      [81, 0, [item(0, 0)]],
+      [0, 0, [item(81, 0)]],
+      [0, 81, [item(0, 0)]],
+      [0, 0, [item(0, 81)]],
     ]
 
     it.each(testCases)("GetItemAt: %s", (xPos, yPos, allItems) => {
