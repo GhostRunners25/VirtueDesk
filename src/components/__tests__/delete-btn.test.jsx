@@ -2,6 +2,7 @@ import { TestRenderer } from 'react-redux-test-renderer';
 import { cleanup } from '@testing-library/react';
 
 import DeleteBtn from '../delete-btn';
+import { ItemDeleted } from '../../redux-src/ActionCreators';
 
 const defaultProps = {
     id: 1,
@@ -37,4 +38,15 @@ describe('Delete Button', () => {
         };
         expect(store.getState()).toEqual(expectedState);
     });
+
+    it('example', () => {
+        const { baseElement, store } = component.renderWithStore(defaultProps, defaultState);
+        component.updateStateWithDispatch(defaultState, ItemDeleted);
+        baseElement.click(baseElement, { button: 1 });
+        const expectedState = {
+            lastId: 1,
+            items: []
+        };
+        expect(store.getState()).toEqual(expectedState);
+    })
 });
