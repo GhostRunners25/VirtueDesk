@@ -64,7 +64,7 @@ describe('Delete Button', () => {
     it('example 4', () => {
         const { store } = component.renderWithStore(defaultProps, defaultState);
         const action = ItemDeleted(1);
-        const result = reducer(store.getState, action);
+        const result = reducer(defaultState, action);
         const expectedState = {
             lastId: 1,
             items: []
