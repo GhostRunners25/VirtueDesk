@@ -1,3 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
 import { TestRenderer } from 'react-redux-test-renderer';
 import { cleanup } from '@testing-library/react';
 
@@ -29,7 +34,17 @@ const component = new TestRenderer(
 
 afterEach(cleanup);
 
-describe('Delete Button', () => {
+describe('Delete Button Rendering', () => {
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(
+            <Provider store={createStore(reducer)}>
+                <DeleteBtn id={1} />
+            </Provider>, div)
+      });
+})
+
+describe('Delete Button Dispatching', () => {
     it('example 1', () => {
         const { baseElement, store } = component.renderWithStore(defaultProps, defaultState);
         baseElement.click(baseElement, { button: 1 });
@@ -53,7 +68,7 @@ describe('Delete Button', () => {
 
     it('example 3', () => {
         const { store } = component.renderWithStore(defaultProps, defaultState);
-        store.dispatch(ItemDeleted(1));
+        store.dispatch(ItemDeleted, { id: 1 });
         const expectedState = {
             lastId: 1,
             items: []
@@ -62,7 +77,7 @@ describe('Delete Button', () => {
     });
 
     it('example 4', () => {
-        const { store } = component.renderWithStore(defaultProps, defaultState);
+        component.renderWithStore(defaultProps, defaultState);
         const action = ItemDeleted(1);
         const result = reducer(defaultState, action);
         const expectedState = {
