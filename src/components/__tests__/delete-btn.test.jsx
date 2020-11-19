@@ -53,7 +53,7 @@ describe('Delete Button', () => {
 
     it('example 3', () => {
         const { store } = component.renderWithStore(defaultProps, defaultState);
-        store.dispatch(ItemDeleted);
+        store.dispatch(ItemDeleted(1));
         const expectedState = {
             lastId: 1,
             items: []
@@ -70,5 +70,15 @@ describe('Delete Button', () => {
             items: []
         };
         expect(result).toEqual(expectedState);
+    });
+
+    it('example 5', () => {
+        const { rerender, store } = component.renderWithStore(defaultProps, defaultState);
+        rerender({ ...defaultState, items: []});
+        const expectedState = {
+            lastId: 1,
+            items: []
+        };
+        expect(store.getState()).toEqual(expectedState);
     });
 });
