@@ -3,6 +3,7 @@ import { cleanup } from '@testing-library/react';
 
 import DeleteBtn from '../delete-btn';
 import { ItemDeleted } from '../../redux-src/ActionCreators';
+import { reducer } from '../../redux-src/reducer';
 
 const defaultProps = {
     id: 1,
@@ -29,7 +30,7 @@ const component = new TestRenderer(
 afterEach(cleanup);
 
 describe('Delete Button', () => {
-    it('button click calls dispatch', () => {
+    it('example 1', () => {
         const { baseElement, store } = component.renderWithStore(defaultProps, defaultState);
         baseElement.click(baseElement, { button: 1 });
         const expectedState = {
@@ -39,7 +40,7 @@ describe('Delete Button', () => {
         expect(store.getState()).toEqual(expectedState);
     });
 
-    it('example', () => {
+    it('example 2', () => {
         const { baseElement, store } = component.renderWithStore(defaultProps, defaultState);
         component.updateStateWithDispatch(defaultState, ItemDeleted);
         baseElement.click(baseElement, { button: 1 });
@@ -48,5 +49,15 @@ describe('Delete Button', () => {
             items: []
         };
         expect(store.getState()).toEqual(expectedState);
-    })
+    });
+
+    it('example 3', () => {
+        const { store } = component.renderWithStore(defaultProps, defaultState);
+        store.dispatch(ItemDeleted);
+        const expectedState = {
+            lastId: 1,
+            items: []
+        };
+        expect(store.getState()).toEqual(expectedState);
+    });
 });
