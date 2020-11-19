@@ -60,4 +60,15 @@ describe('Delete Button', () => {
         };
         expect(store.getState()).toEqual(expectedState);
     });
+
+    it('example 4', () => {
+        const { store } = component.renderWithStore(defaultProps, defaultState);
+        const action = ItemDeleted(1);
+        const result = reducer(store.getState, action);
+        const expectedState = {
+            lastId: 1,
+            items: []
+        };
+        expect(result).toEqual(expectedState);
+    });
 });
