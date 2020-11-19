@@ -1,4 +1,3 @@
-import React from 'react';
 import { TestRenderer } from 'react-redux-test-renderer';
 import { cleanup } from '@testing-library/react';
 import DeleteBtn from '../delete-btn';
