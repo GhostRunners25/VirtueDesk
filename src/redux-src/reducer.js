@@ -1,4 +1,4 @@
-import * as actions from './ActionCreators';
+import * as actions from './action-creators';
 
 const initial = {
     lastId: 0,

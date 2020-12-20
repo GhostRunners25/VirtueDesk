@@ -1,5 +1,5 @@
 import reducer from "../reducer";
-import {ItemAdded, ItemDeleted, ItemRenamed, ItemMoving} from "../ActionCreators";
+import { ItemAdded, ItemDeleted, ItemRenamed, ItemMoving } from "../action-creators";
 
 const TestState = {
   lastId: 1,

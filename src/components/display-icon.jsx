@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { ItemMoving } from '../redux-src/ActionCreators';
+import { ItemMoving } from '../redux-src/action-creators';
 
 const DisplayIcon = (props) => {
     const dispatch = useDispatch();

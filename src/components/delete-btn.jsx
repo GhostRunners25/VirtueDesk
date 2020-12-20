@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemDeleted } from '../redux-src/ActionCreators';
+import { ItemDeleted } from '../redux-src/action-creators';
 
 import { useDispatch } from 'react-redux';
 
